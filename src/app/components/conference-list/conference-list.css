@@ -1,0 +1,84 @@
+.conference-section {
+  margin-top: 30px;
+}
+
+.conference-section h2 {
+  color: #173b67;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.conference-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.conference-card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #2f6fb4;
+}
+
+.conference-card h3 {
+  color: #173b67;
+  font-size: 18px;
+}
+
+.conference-card p {
+  color: #444;
+  line-height: 1.6;
+}
+
+.conference-card button {
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+.conference-card button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.empty-message {
+  text-align: center;
+  color: #777;
+  padding: 25px;
+}
+
+.search-container {
+  max-width: 500px;
+  margin: 0 auto 25px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: #2f6fb4;
+  box-shadow: 0 0 5px rgba(47, 111, 180, 0.3);
+}
+
+.conference-card {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.conference-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}

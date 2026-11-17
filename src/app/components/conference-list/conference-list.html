@@ -1,0 +1,78 @@
+
+<section class="conference-section" id="conference-list">
+
+  <h2>Liste des conférences à venir</h2>
+
+  <div class="search-container">
+    <input
+      type="text"
+      placeholder="Rechercher une conférence..."
+      [value]="searchTerm()"
+      (input)="searchTerm.set($any($event.target).value)"
+    />
+  </div>
+
+  <div class="conference-container">
+
+    @for (conference of searchConferences(); track conference.id) {
+
+      <div
+        class="conference-card"
+        (click)="selectConference(conference)"
+      >
+
+        <h3>{{ conference.title | uppercase }}</h3>
+
+        <p>{{ conference.description }}</p>
+
+        <p>
+          <strong>Date :</strong>
+          {{ conference.date | date:'dd/MM/yyyy' }}
+        </p>
+
+        <p>
+          <strong>Lieu :</strong>
+          {{ conference.place }}
+        </p>
+
+        <p>
+          <strong>Participants :</strong>
+          {{ conference.nbParticipants }}
+          / {{ conference.maxParticipants }}
+        </p>
+
+        <p>
+          <strong>Places restantes :</strong>
+          {{ conference.maxParticipants - conference.nbParticipants }}
+        </p>
+
+        <button
+          [style.backgroundColor]="
+            conference.nbParticipants >= conference.maxParticipants
+              ? '#dc2626'
+              : conference.maxParticipants - conference.nbParticipants < 10
+                ? '#f59e0b'
+                : '#16a34a'
+          "
+          [disabled]="conference.nbParticipants >= conference.maxParticipants"
+          (click)="register(conference.id); $event.stopPropagation()"
+        >
+          S'inscrire
+        </button>
+
+      </div>
+
+    }
+    @empty {
+      <p class="empty-message">
+        Aucune conférence disponible pour le moment.
+      </p>
+    }
+
+  </div>
+
+  <app-conference-details
+    [conference]="selectedConference()"
+  />
+
+</section>

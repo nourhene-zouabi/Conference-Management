@@ -1,0 +1,21 @@
+.details-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  border-left: 5px solid #2f6fb4;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+  margin: 30px 20px;
+}
+
+.details-card h2 {
+  color: #173b67;
+}
+
+.details-card h3 {
+  color: #2f6fb4;
+}
+
+.empty-details {
+  text-align: center;
+  color: #777;
+}

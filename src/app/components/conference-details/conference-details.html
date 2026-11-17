@@ -1,0 +1,34 @@
+@if (conference(); as conf) {
+
+  <section class="details-card">
+
+    <h2>Détails de la conférence</h2>
+
+    <h3>{{ conf.title }}</h3>
+
+    <p>{{ conf.description }}</p>
+
+    <p><strong>Date :</strong> {{ conf.date | date:'dd/MM/yyyy' }}</p>
+
+    <p><strong>Lieu :</strong> {{ conf.place }}</p>
+
+    <p>
+      <strong>Participants :</strong>
+      {{ conf.nbParticipants }} / {{ conf.maxParticipants }}
+    </p>
+
+    <p>
+      <strong>Places restantes :</strong>
+      {{ conf.maxParticipants - conf.nbParticipants }}
+    </p>
+
+  </section>
+
+} @else {
+
+  <section class="details-card empty-details">
+    <h2>Détails de la conférence</h2>
+    <p>Sélectionnez une conférence pour afficher ses détails.</p>
+  </section>
+
+}
